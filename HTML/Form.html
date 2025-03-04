@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form action="secondpage.html" method="get">
+      <label for="fn">First Name:</label>
+      <input id="fn" type="text" name="first_name" placeholder="First Name" required />
+      
+      <label for="ln">Last Name:</label>
+      <input id="ln" type="text" name="last_name" placeholder="Last Name" required />
+      
+      <br /><br />
+      
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" placeholder="Email" required />
+      
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="password" placeholder="Password" required />
+      
+      <br /><br />
+      
+      <fieldset>
+        <legend>Select your hobbies:</legend>
+        <label><input type="checkbox" name="hobby" value="reading" /> Reading</label>
+        <label><input type="checkbox" name="hobby" value="gaming" /> Gaming</label>
+        <label><input type="checkbox" name="hobby" value="traveling" /> Traveling</label>
+        <label><input type="checkbox" name="hobby" value="music" /> Music</label>
+        <label><input type="checkbox" name="hobby" value="sports" /> Sports</label>
+      </fieldset>
+      
+      <br />
+      
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" cols="30" placeholder="Enter your address" required></textarea>
+      
+      <br /><br />
+      
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="birthdate" required />
+      
+      <br /><br />
+      
+      <label for="file">Upload your PDF:</label>
+      <input type="file" id="file" name="fileupload" accept=".pdf" required />
+      
+      <br /><br />
+      
+      <input type="reset" value="Reset Form" />
+      <input type="submit" value="Submit Form" />
+    </form>
+  </body>
+</html>
