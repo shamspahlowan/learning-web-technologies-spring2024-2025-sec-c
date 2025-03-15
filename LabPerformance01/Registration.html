@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+</head>
+
+<body>
+  <header>
+    <h1 align="center">Registration Form</h1>
+  </header>
+  <main>
+    <form onsubmit="location.href='HomePage.html';">
+      <table align="center" cellpadding="8">
+        <tr>
+          <td><label for="fn">First Name:</label></td>
+          <td><input id="fn" type="text" name="first_name" placeholder="First Name"  /></td>
+        </tr>
+        <tr>
+          <td><label for="ln">Last Name:</label></td>
+          <td><input id="ln" type="text" name="last_name" placeholder="Last Name"  /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input id="email" type="email" name="email" placeholder="Email"  /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td><input id="password" type="password" name="password" placeholder="Password"  /></td>
+        </tr>
+        <tr>
+          <td><label for="gender">Gender:</label></td>
+          <td>
+            <input id="gender" type="radio" name="gender" value="Male" > Male </input>
+            <input id="gender" type="radio" name="gender" value="Female" > Female </input>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <fieldset>
+              <legend>Select your hobbies:</legend>
+              <label><input type="checkbox" name="hobby" value="reading" /> Reading</label>
+              <label><input type="checkbox" name="hobby" value="gaming" /> Gaming</label>
+              <label><input type="checkbox" name="hobby" value="traveling" /> Traveling</label>
+              <label><input type="checkbox" name="hobby" value="music" /> Music</label>
+              <label><input type="checkbox" name="hobby" value="sports" /> Sports</label>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Address:</label></td>
+          <td><textarea id="address" name="address" rows="2" cols="30" placeholder="Enter your address" ></textarea></td>
+        </tr>
+        <tr>
+          <td><label for="dob">Date of Birth:</label></td>
+          <td><input type="date" id="dob" name="birthdate"  /></td>
+        </tr>
+        <tr>
+          <td><label for="file">Upload your File:</label></td>
+          <td><input type="file" id="file" name="fileupload"  /></td>
+        </tr>
+        <tr>
+          <td><input type="reset" value="Reset Form" /></td>
+          <td><input type="submit" value="Submit Form" /></td>
+        </tr>
+      </table>
+    </form>
+  </main>
+
+</body>
+
+</html>
