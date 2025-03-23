@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+    <h1 id="head">JS Example</h1>
+
+    <form action="../LabPerformance01/HomePage.html" onsubmit="return validate()">
+        Username: <input type="text" id="username" name="username" value=""/> 
+        <p id="usererror"></p>
+        Password: <input type="password" id="password" name="password" value=""/> 
+        <p id="passerror"></p>
+        <input type="submit" name="button" id="button" value="submit"/>
+        <p id="validerror"></p>
+    </form>
+    
+    <script>
+        // function test(){
+        //     let head = document.getElementsByTagName('h1')[0];
+        //     head.innerHTML = "TEST";
+        // }
+
+        // function changeText(){
+        //     let username = document.getElementById('username').value;
+        //     let userError = document.getElementById('usererror');
+
+        //     if(username === ""){
+        //         userError.innerHTML = "Please type username first!";
+        //         userError.style.color = 'red';
+        //     } else {
+        //         document.getElementById('head').innerHTML = username;
+        //         userError.innerHTML = "";
+        //     }
+        // }
+
+        function validate() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let userError = document.getElementById('usererror');
+            let passError = document.getElementById('passerror');
+            let validError = document.getElementById('validerror');
+
+            userError.innerHTML = "";
+            passError.innerHTML = "";
+            validError.innerHTML = "";
+
+            if (username === "") {
+                userError.innerHTML = "Username cannot be empty!";
+                userError.style.color = 'red';
+                return false;
+            }
+
+            if (password === "") {
+                passError.innerHTML = "Password cannot be empty!";
+                passError.style.color = 'red';
+                return false;
+            }
+
+            if (username !== password) {
+                validError.innerHTML = "Username and password must be the same!";
+                validError.style.color = 'red';
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
