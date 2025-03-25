@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Date Validation</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="dateForm" onsubmit="return validateDate()">
+      <fieldset>
+        <legend>Date of Birth</legend>
+        <table>
+          <tr>
+            <td><label for="day">dd</label></td>
+            <td></td>
+            <td><label for="month">mm</label></td>
+            <td></td>
+            <td><label for="year">yyyy</label></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="day" name="day" placeholder="DD" /></td>
+            <td>/</td>
+            <td>
+              <input type="text" id="month" name="month" placeholder="MM" />
+            </td>
+            <td>/</td>
+            <td>
+              <input type="text" id="year" name="year" placeholder="YYYY" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <span id="dateError" class="error"></span>
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+    <script>
+      function validateDate() {
+        const dayInput = document.getElementById("day");
+        const monthInput = document.getElementById("month");
+        const yearInput = document.getElementById("year");
+        const dateError = document.getElementById("dateError");
+
+        dateError.textContent = "";
+
+        if (
+          dayInput.value.trim() === "" ||
+          monthInput.value.trim() === "" ||
+          yearInput.value.trim() === ""
+        ) {
+          dateError.textContent = "All date fields must be filled";
+          return false;
+        }
+
+        const day = parseInt(dayInput.value);
+        const month = parseInt(monthInput.value);
+        const year = parseInt(yearInput.value);
+
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+          dateError.textContent = "Please enter valid numbers";
+          return false;
+        }
+
+        if (day < 0 || day > 31) {
+          dateError.textContent = "Day must be between 0 and 31";
+          return false;
+        }
+        if (month < 1 || month > 12) {
+          dateError.textContent = "Month must be between 1 and 12";
+          return false;
+        }
+        if (year < 1900 || year > 2016) {
+          dateError.textContent = "Year must be between 1900 and 2016";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
