@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blood Group Validation</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="BloodForm" onsubmit="return validateCountry()">
+      <label for="BloodGroup">Blood Group</label>
+      <select id="Group" name="Group">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+      <br />
+      <span id="GroupError" class="error"></span>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function validateGroup() {
+        const GroupSelect = document.getElementById("Group");
+        const GroupError = document.getElementById("GroupError");
+        GroupError.textContent = "";
+
+        if (GroupSelect.value === "") {
+          GroupError.textContent = "Please select a Group";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
