@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Registration</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm" onsubmit="return validateRegistration()">
+      <fieldset>
+        <legend>User Information</legend>
+        <table>
+          <tr>
+            <td><label for="userId">User ID</label></td>
+            <td>:</td>
+            <td>
+              <input
+                type="text"
+                id="userId"
+                name="userId"
+                placeholder="Enter your user ID"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="picture">Picture</label></td>
+            <td>:</td>
+            <td><input type="file" id="picture" name="picture" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <span id="userIdError" class="error"></span>
+              <span id="pictureError" class="error"></span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+    <script>
+      function validateRegistration() {
+        const userIdInput = document.getElementById("userId");
+        const pictureInput = document.getElementById("picture");
+        const userIdError = document.getElementById("userIdError");
+        const pictureError = document.getElementById("pictureError");
+
+        userIdError.textContent = "";
+        pictureError.textContent = "";
+
+        const userId = userIdInput.value.trim();
+        if (userId === "") {
+          userIdError.textContent = "User ID cannot be empty";
+          return false;
+        }
+
+        const numUserId = parseFloat(userId);
+        if (isNaN(numUserId) || numUserId <= 0) {
+          userIdError.textContent = "User ID must be a positive number";
+          return false;
+        }
+
+        if (pictureInput.files.length === 0) {
+          pictureError.textContent = "Please select a picture";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
