@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>NASA's CALCULATOR</h2>
+
+    <input type="text" id="display" size="20" readonly  />
+
+    <table cellspacing="3">
+      <tr>
+        <td><button data-value="AC">AC</button></td>
+        <td><button data-value="DEL">DEL</button></td>
+        <td><button data-value="%">%</button></td>
+        <td><button data-value="/">/</button></td>
+      </tr>
+      <tr>
+        <td><button data-value="7">7</button></td>
+        <td><button data-value="8">8</button></td>
+        <td><button data-value="9">9</button></td>
+        <td><button data-value="*">*</button></td>
+      </tr>
+      <tr>
+        <td><button data-value="4">4</button></td>
+        <td><button data-value="5">5</button></td>
+        <td><button data-value="6">6</button></td>
+        <td><button data-value="-">-</button></td>
+      </tr>
+      <tr>
+        <td><button data-value="1">1</button></td>
+        <td><button data-value="2">2</button></td>
+        <td><button data-value="3">3</button></td>
+        <td><button data-value="+">+</button></td>
+      </tr>
+      <tr>
+        <td><button data-value="0">0</button></td>
+        <td><button data-value=".">.</button></td>
+        <td colspan="2"><button data-value="=" style="width: 100%;">=</button></td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
